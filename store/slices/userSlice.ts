@@ -1,5 +1,6 @@
 import { UserData } from "@/models/user.model";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 interface UserState {
   username: string;
@@ -11,7 +12,7 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  username: "",
+  username: "12341234",
   accessToken: "",
   isAuthenticated: false,
   isAuthenticating: true,
@@ -29,4 +30,5 @@ const userSlice = createSlice({
   },
 });
 
+export const userSelector = (store: RootState) => store.user;
 export default userSlice.reducer;
