@@ -62,16 +62,11 @@ type HeaderProp = {
   onDrawerOpen: () => void;
 };
 
-const Header = (prop: HeaderProp) => {
+const Header = ({ open, onDrawerOpen }: HeaderProp) => {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
+    onDrawerOpen();
   };
 
   return (
