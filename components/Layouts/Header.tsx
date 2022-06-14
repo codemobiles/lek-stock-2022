@@ -57,7 +57,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   justifyContent: "flex-end",
 }));
 
-export default function Header() {
+type HeaderProp = {
+  open: boolean;
+  onDrawerOpen: () => void;
+};
+
+const Header = (prop: HeaderProp) => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -87,4 +92,6 @@ export default function Header() {
       </Toolbar>
     </AppBar>
   );
-}
+};
+
+export default Header;
