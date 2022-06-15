@@ -1,0 +1,22 @@
+### Login 
+POST http://localhost:8085/api/v2/authen/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password" : "1234"
+}
+
+
+### Register 
+POST http://localhost:8085/api/v2/authen/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "admin1",
+    "password" : "12345"
+}
+
+### profile
+GET http://localhost:8085/api/v2/authen/profile HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluMyIsImxldmVsIjoibm9ybWFsIiwiaWF0IjoxNjUxODA2ODE0fQ.9knJr7GBPxsfVsY9x_Id2FttUOIRiUv_DoS-QxRu_1Q
