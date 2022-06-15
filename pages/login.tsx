@@ -5,11 +5,13 @@ import Typography from "@mui/material/Typography";
 import Layout from "@/components/Layouts/Layout";
 import { Formik, Form, Field, FormikProps } from "formik";
 import { useSelector } from "react-redux";
-import { userSelector } from "@/store/slices/userSlice";
+import { signin, userSelector } from "@/store/slices/userSlice";
+import { useAppDispatch } from "@/store/store";
 
 export default function PersistentDrawerLeft() {
   const theme = useTheme();
   const userReducer = useSelector(userSelector);
+  const dispatch = useAppDispatch();
 
   return (
     <Layout>
@@ -17,7 +19,8 @@ export default function PersistentDrawerLeft() {
       <Formik
         initialValues={{ username: "", password: "" }}
         onSubmit={(values) => {
-          alert(JSON.stringify(values));
+          // alert(JSON.stringify(values));
+          dispatch(signin(values));
         }}
       >
         {({ values, handleChange, handleSubmit }) => (
